@@ -27,11 +27,15 @@
 ![image](https://github.com/user-attachments/assets/f804e95a-0514-4537-8c0a-70a0c3ad5f7a)
 
 ### # Open ArgoCD UI with using port-forwording
+```
 kubectl port-forward svc/argocd-server -n argocd 8080:443
+```
 ![image](https://github.com/user-attachments/assets/262a3fe1-43cc-4254-9d61-8f3b12fcafdf)
 
 ### # Get password and logged in
+```
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+```
 ![image](https://github.com/user-attachments/assets/8a255688-bc1a-4f89-8b0c-1bd31b4e9003)
 
 ### # Configure git repo with ArgoCD
